@@ -12,6 +12,6 @@ public class Sniper  extends Hero{
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return ("Sniper  "+ name+" "+"Здоровье: "+health+"/"+maxHealth+" "+"броня: "+ armor);
+        return ("Crossbower  "+ name+" "+"Здоровье: "+health+"/"+maxHealth+" "+"броня: "+ armor+" макс повреждение"+" "+ rangeMaxDamage);
     }
 }
