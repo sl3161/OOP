@@ -13,7 +13,7 @@ public abstract class Melee extends Hero {
             
     }
     public void moveToEnemy ( Hero enemy, ArrayList <Hero> command){
-            if (enemy.position.y>this.position.y ) {
+            if (enemy.position.y>this.position.y ) {                                                //условие направления шага в зависимости от того чья координата больше - врага и героя, если они равны ход по этой координате не совершается 
                 
                 if (this.position.checkCell(command, this.position.x, this.position.y+1)==false){
                                                                                                     //сделать ход по y не получилось
@@ -26,7 +26,7 @@ public abstract class Melee extends Hero {
                     return;
                 }
             }
-            else {
+            else if (enemy.position.y<this.position.y ) {
                 if (this.position.checkCell(command, this.position.x, this.position.y-1)==false){             
                 }
                 else {
@@ -36,20 +36,20 @@ public abstract class Melee extends Hero {
                     return;
                     }    
             }
-            if (enemy.position.x>this.position.x ) {                //если не вышли из метода , значит по у не получился ход пробкем по х
-                if (this.position.checkCell(command, this.position.x+1, this.position.y)==false){                              //сделать ход по x не получилось
+            if (enemy.position.x>this.position.x ) {                                                      //если не вышли из метода , значит по у не получился ход и ходим по х
+                if (this.position.checkCell(command, this.position.x+1, this.position.y)==false){         //сделать ход по x не получилось
                  System.out.println("не получилось сделать ход");
                  System.out.println("_____________________________________________");
                  return;
                 }
                 else {
-                    this.position.x+=1;
-                    System.out.println(this.toString()+ " сделал ход по х ");   //сделали ход по x, вышли из метода 
+                    this.position.x+=1;   
+                    System.out.println(this.toString()+ " сделал ход по х ");                              //сделали ход по x, вышли из метода 
                     System.out.println("_____________________________________________");
                     return;
                 }
             }
-            else {
+            else if (enemy.position.x<this.position.x )  {
                 if (this.position.checkCell(command, this.position.x-1, this.position.y)==false){             
                 System.out.println("по х не получилось сделать ход");
                 return;
