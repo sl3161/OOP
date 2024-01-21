@@ -1,18 +1,15 @@
 package OOP.Sem1;
 
-public class Wizard  extends Hero{
-    public Wizard(String name, int x, int y){
-        super (50,
-            1,
-            50,
-            new int []{-35,-30}, name, x, y);
-            rangeMaxDamage = 4;
-    }
-    int rangeMaxDamage;
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return ("Wizard  "+ name+" "+"Здоровье: "+health+"/"+maxHealth+" "+"броня: "+ armor+" " + position.x + " " + position.y);
+
+public class Wizard extends Mag {
     
+        public Wizard(String name, int x,int y){
+            super (name, 120, 0, 120, -30, x, y, -10);      
+        }
+        @Override
+        public String toString() {
+            // TODO Auto-generated method stub
+            return (" Волшебник " + name + " " + super.toString());
+        
 }
 }

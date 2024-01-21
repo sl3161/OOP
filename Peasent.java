@@ -5,12 +5,12 @@ public class Peasent extends Hero {
         super (100,
             0,
             100,
-            new int []{0,0}, name, x, y);
-            
+            0,0, name, x, y);
+            init = 0;
     }
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return ("Crossbower  "+ name+" "+"Здоровье: "+health+"/"+maxHealth+" "+"броня: "+ armor+" " + position.x + " " + position.y);
+        return (" Крестьянин  "+ name+" "+"Здоровье: "+health+"/"+ "инициатива "+ init+" "+maxhealth+" "+"броня: "+ armor+" "+"координаты х,у " + position.x + " ," + position.y);
     }
 }

@@ -1,19 +1,16 @@
 package OOP.Sem1;
 
-public class Rogue extends Hero {
+public class Rogue extends Melee {
     
     public Rogue(String name, int x, int y){
-        super (100,
-            5,
-            100,
-            new int []{20,30}, name, x, y);
+        super (name, 150, 7, 150, 10, x, y, 16);
             this.position = new Vector2(x, y);
-            rangeMaxDamage = 4;
+            init = 2;
     }
     protected int rangeMaxDamage;
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return ("Rogue  "+ name+" "+"Здоровье: "+health+"/"+maxHealth+" "+"броня: "+ armor+" " + position.x + " " + position.y);
+        return (" Разбойник  "+ name +" "+ super.toString());
     }
 }

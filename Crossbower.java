@@ -1,20 +1,22 @@
 package OOP.Sem1;
 
-public class Crossbower extends Hero {
+public class Crossbower extends Archer {
     
         public Crossbower(String name, int x, int y){
-            super (75,
+            super (name, 90,
                 5,
-                100,
-                new int []{20,30}, name , x, y);
-                this.position = new Vector2(x, y);
-                rangeMaxDamage = 4;
+                90,
+                5,
+                x, y, 3, 10 );
                 
+               
         }
-        int rangeMaxDamage;
+        
+    
+        
         @Override
         public String toString() {
             // TODO Auto-generated method stub
-            return ("Crossbower  "+ name+" "+"Здоровье: "+health+"/"+maxHealth+" "+"броня: "+ armor+" макс повреждение"+" "+ rangeMaxDamage+" " + position.x + " " + position.y);
+            return (" Арбалетчик  " + name+" "+ super.toString());
         }
-}
+    }
