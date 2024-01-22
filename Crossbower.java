@@ -17,6 +17,6 @@ public class Crossbower extends Archer {
         @Override
         public String toString() {
             // TODO Auto-generated method stub
-            return (" Арбалетчик  " + name+" "+ super.toString());
+            return ("Арбалетчик  " + name+" "+ super.toString());
         }
     }

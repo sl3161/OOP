@@ -17,12 +17,12 @@ public abstract class Melee extends Hero {
                 
                 if (this.position.checkCell(command, this.position.x, this.position.y+1)==false){
                                                                                                     //сделать ход по y не получилось
-                 System.out.println("по у не получилось сделать ход по у");
+                // System.out.println(this.toString()+" по у не получилось сделать ход");
                 }
                 else {
                     this.position.y+=1;
-                    System.out.println(this.toString()+ " сделал ход по у ");                        //сделали ход по у, вышли из метода 
-                    System.out.println("_____________________________________________");
+                    // System.out.println(this.toString()+ " сделал ход по у ");                        //сделали ход по у, вышли из метода 
+                    // System.out.println("_____________________________________________");
                     return;
                 }
             }
@@ -31,31 +31,28 @@ public abstract class Melee extends Hero {
                 }
                 else {
                     this.position.y-=1;
-                    System.out.println(this.toString()+ " сделал ход по у ");
-                    System.out.println("_____________________________________________");
+                    // System.out.println(this.toString()+ " сделал ход по у ");
                     return;
                     }    
             }
             if (enemy.position.x>this.position.x ) {                                                      //если не вышли из метода , значит по у не получился ход и ходим по х
                 if (this.position.checkCell(command, this.position.x+1, this.position.y)==false){         //сделать ход по x не получилось
-                 System.out.println("не получилось сделать ход");
-                 System.out.println("_____________________________________________");
+                    // System.out.println(this.toString()+" по х не получилось сделать ход");
                  return;
                 }
                 else {
                     this.position.x+=1;   
-                    System.out.println(this.toString()+ " сделал ход по х ");                              //сделали ход по x, вышли из метода 
-                    System.out.println("_____________________________________________");
+                    // System.out.println(this.toString()+ " сделал ход по х ");                              //сделали ход по x, вышли из метода 
                     return;
                 }
             }
             else if (enemy.position.x<this.position.x )  {
                 if (this.position.checkCell(command, this.position.x-1, this.position.y)==false){             
-                System.out.println("по х не получилось сделать ход");
+                // System.out.println(this.toString()+" по х не получилось сделать ход");
                 return;
                 }
                 else {
-                    System.out.println(this.toString()+ " сделал ход по х ");
+                    // System.out.println(this.toString()+ " сделал ход по х ");
                     this.position.x-=1;
                     return;
                     }    
@@ -72,11 +69,10 @@ public abstract class Melee extends Hero {
     @Override
     public  void step (ArrayList<Hero> commandEnemies,ArrayList<Hero> myCommand){
         Hero target = GetClosestOp(commandEnemies);
-        System.out.println("Ближайший враг к "+this.toString()+" - "+ target);
-        if (this.health> 0 && this.position.RangeEnemy(target.position)<2 ) {
+        if ( target == null) return;
+        if (this.health> 0 && this.position.RangeEnemy(target.position )<2 ) {
             attack(target);
-            System.out.println(this.toString()+ "  атаковал  " + target);
-            System.out.println("_____________________________________________");
+            // System.out.println(this.toString()+ "  атаковал  " + target);
          }
         if (this.health>0 && this.position.RangeEnemy(target.position)>=2 ) {
             

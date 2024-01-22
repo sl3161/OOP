@@ -15,16 +15,14 @@ public float RangeEnemy ( Vector2 posEnemy){
 }
 
 public boolean checkCell(ArrayList<Hero> command,int x, int y) {
-    // int newX ;
-    // int newY;
 for (Hero item : command) {
     if (item.position.x == x && item.position.y == y){
-        System.out.println("Клетка "+ x +","+ y + "  занята "+ item.toString());
+        // System.out.println("Клетка "+ x +","+ y + "  занята "+ item.toString());
         return false;
     }
     
 }  
-System.out.println("Клетка свободна");
+// System.out.println("Клетка свободна");
    return true;
 }
     

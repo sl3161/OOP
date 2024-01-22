@@ -7,7 +7,7 @@ public class Sniper  extends Archer{
             5,
             100,
             5,
-            x, y, 3, 13 );
+            x, y, 3, 11 );
             
            
     }
@@ -15,6 +15,6 @@ public class Sniper  extends Archer{
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return (" Лучник  " + name+" "+ super.toString());
+        return ("Лучник  " + name+" "+ super.toString());
     }
 }
