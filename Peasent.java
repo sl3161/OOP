@@ -13,7 +13,10 @@ public class Peasent extends Hero {
    
     public void getArraw (Hero target){
 
-        if ((((Archer)target).getstock()) < 3 && target !=null) ((Archer)target).setstock(((Archer)target).getstock()+1);
+        if ((((Archer)target).getstock()) < 3 && target !=null){
+        ((Archer)target).setstock(((Archer)target).getstock()+1);
+        // System.out.println(this.toString()+ " дал стрелу " + target);
+        }
         else return;
     }
    
@@ -42,7 +45,11 @@ public class Peasent extends Hero {
     public  void step (ArrayList<Hero> commandEnemies, ArrayList<Hero> myCommand ){
         if (this.health> 0 ) {
             Hero target = GetEmptyArcher(myCommand);
-            if (target == null) return;
+            if (target == null){
+                // System.out.println("Лучников");
+                return;
+            
+            }
             else getArraw(target); 
             
             // System.out.println(this.toString()+"  атаковал  " + target);
